@@ -1,0 +1,142 @@
+%-------------------------------------------------------------------------------------------
+% enter the author and paper information below:
+%-------------------------------------------------------------------------------------------
+\newcommand{\myname}{Geoff Boeing}
+\newcommand{\myemail}{gboeing@berkeley.edu}
+\newcommand{\myaffiliation}{Department of City and Regional Planning\\University of California, Berkeley}
+\newcommand{\paperdate}{February 2018}
+\newcommand{\papertitle}{This Is My Paper Title}
+\newcommand{\papercitation}{Boeing, G. 2018. \papertitle. Under review at \emph{Journal Name}.}
+\newcommand{\paperkeywords}{Urban Planning, Transportation, Data Science}
+
+%-------------------------------------------------------------------------------------------
+% begin preamble setup
+%-------------------------------------------------------------------------------------------
+\RequirePackage[l2tabu,orthodox]{nag}
+\documentclass[11pt,twocolumn]{article}
+
+% import these packages first, in order
+\usepackage[utf8]{inputenc}
+\usepackage[strict,autostyle]{csquotes}
+\usepackage[USenglish]{babel}
+
+% import everything else
+\usepackage{authblk}
+\usepackage{booktabs}
+\usepackage{cochineal}
+\usepackage{datetime}
+\usepackage[final]{draftwatermark}
+\usepackage{endnotes}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{url}
+
+% location of figure files
+\graphicspath{{./figures/}}
+
+% configure the page layout
+\geometry{
+	paper=letterpaper,         % paper size
+	top=3cm,                   % margin sizes
+	bottom=3cm,
+	left=2.5cm,
+	right=2.5cm}
+\setlength{\columnsep}{0.75cm} % space between text columns
+\setstretch{1.05}              % line spacing
+\clubpenalty=10000             % prevent orphans
+\widowpenalty=10000            % prevent widows
+\let\footnote=\endnote         % turn footnotes into endnotes
+
+% configure pdf metadata and link handling
+\hypersetup{
+	pdfauthor={\myname},
+	pdftitle={\papertitle},
+	pdfsubject={\papertitle},
+	pdfkeywords={\paperkeywords},
+	pdffitwindow=true,         % window fit to page when opened
+	breaklinks=true,           % break links that overflow horizontally
+	hidelinks=true             % remove link color and border
+}
+
+% configure watermark appearance
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{1.3}
+\SetWatermarkLightness{0.9}
+
+%-------------------------------------------------------------------------------------------
+% end preamble setup, begin document
+%-------------------------------------------------------------------------------------------
+\begin{document}
+
+\title{\papertitle\footnote{This is a preprint of: \papercitation}}
+\date{\paperdate}
+\author[]{\myname \thanks{Email: \href{mailto:\myemail}{\myemail}}}
+\affil[]{\myaffiliation}
+\maketitle
+
+Lorem\footnote{This is my footnote.} ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum sapien at libero finibus, lacinia tincidunt mi varius. Vestibulum eget pretium urna. Phasellus consectetur sem eu egestas scelerisque. Etiam tempor porttitor nulla, et rhoncus dui. Praesent iaculis sollicitudin augue et luctus. Quisque congue odio a suscipit sodales. Nullam mattis, ligula at vulputate lacinia, est nisi faucibus felis, ac gravida orci ligula sit amet nulla. Sed commodo magna semper interdum facilisis. Proin porttitor tortor a purus convallis malesuada \citep{boeing_new_2017}. Ut tempus eleifend eros, lacinia lobortis urna rhoncus ut. Donec in sapien tincidunt, consectetur velit ut, posuere nibh. Cras finibus imperdiet sem nec placerat. Donec efficitur metus eu sapien semper elementum. Nullam eros dui, rhoncus lacinia libero ac, pretium pellentesque justo. In a laoreet mauris, ac sollicitudin erat. Phasellus mattis tincidunt diam id sagittis.
+
+Nullam consequat ex lectus. Aliquam sagittis lacus quis dui tincidunt, eget accumsan dolor dictum. Duis vel ultricies sem. Aliquam dapibus tellus consequat, ornare diam vitae, dapibus dui. Maecenas blandit posuere augue quis ornare. Fusce posuere tortor fringilla lacus viverra, a iaculis quam vehicula. Aenean convallis tellus ut leo egestas, ac consequat nisi efficitur.
+
+Nunc porttitor pretium eleifend \citep{boarnet_travel_2001}. In hendrerit dolor leo, at rutrum erat finibus ac. Aliquam id nisi ipsum. In tristique, neque nec condimentum consectetur, neque nisi imperdiet nibh, at pellentesque urna quam non leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut sed consequat nunc, sit amet iaculis augue. Mauris in blandit erat, non dapibus nulla. Duis condimentum pretium felis, vel commodo justo luctus non. Integer consectetur, ipsum consectetur tristique pharetra, ligula purus ultricies diam, et lacinia odio sapien et arcu. Morbi vel semper urna, in consectetur massa. Mauris rutrum sem nec tortor tincidunt porta. Mauris maximus vehicula nisi, id cursus leo laoreet ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas a lacus vel nisl volutpat vehicula.
+
+\begin{equation}
+	\label{eq:my_equation}
+	D_t = \frac{R_t + I_t - O_t}{A_t}
+\end{equation}
+
+\begin{figure*}[htbp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{example.png}
+	\caption{This is the caption of my figure.}
+	\label{fig:my_figure}
+\end{figure*}
+
+Nunc efficitur dui non elementum tincidunt. Sed eget ultricies dui, nec congue massa. Fusce at faucibus arcu, a dapibus leo. Donec congue viverra lorem, et viverra massa pellentesque eu. Mauris dictum efficitur lectus, nec tempus velit viverra at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In tristique urna purus, a viverra sapien vehicula at. Donec id lectus dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut viverra leo ac velit aliquam, id pellentesque est maximus. Proin laoreet aliquet ex vel semper. Integer congue sollicitudin elit, ut tincidunt odio tincidunt quis. Duis eu mi sed massa pellentesque efficitur. Suspendisse fringilla dolor sed erat finibus consequat. Integer in metus vel odio hendrerit efficitur. Nulla sed orci nec mi commodo ultricies mattis non tortor.
+
+\begin{table*}[tbp]
+	\centering
+	\caption{This is the caption of my table.}
+	\label{tab:my_table}
+	\begin{tabular}{rrrr}
+		\toprule
+		Residential Pop &  Daytime Pop &  Land Area (km\textsuperscript{2}) &  Daytime Density \\
+		\midrule
+		1783  & 70728 & 0.556 & 127198 \\
+		6172  & 42635 & 0.446 &  95652 \\
+		2734  &  8006 & 0.092 &  86882 \\
+		1500  &  4850 & 0.057 &  85743 \\
+		4307  & 19051 & 0.240 &  79424 \\
+		4233  & 22416 & 0.346 &  64768 \\
+		3499  & 13051 & 0.214 &  60971 \\
+		11502 & 92865 & 1.670 &  55617 \\
+		3821  &  3319 & 0.061 &  54162 \\
+		3073  &  4829 & 0.093 &  52122 \\
+		\bottomrule
+	\end{tabular}
+\end{table*}
+
+Quisque faucibus varius elit eu accumsan Figure \ref{fig:my_figure}. Vivamus sit amet arcu at nibh auctor vulputate. Suspendisse dolor est, lacinia quis justo sodales, varius rhoncus nisi. Nulla maximus urna pulvinar dui pellentesque ultrices. Sed tincidunt consectetur massa, tincidunt sollicitudin odio eleifend in. Cras ornare ante non semper efficitur. Morbi vel maximus nisi, ac luctus sapien. Etiam augue nisi, aliquam vel quam quis, dignissim dignissim orci. Phasellus ultricies purus in ante scelerisque pulvinar. Morbi faucibus fringilla congue. Aenean accumsan est sit amet dolor maximus, vel posuere quam semper. Sed vehicula cursus gravida. Pellentesque auctor in elit ut laoreet. Proin iaculis condimentum turpis. Aenean egestas semper laoreet. Ut ornare dui quis lacus feugiat, eget posuere odio rutrum.
+
+Integer urna mauris, varius at vestibulum id, elementum id purus. Vestibulum tincidunt, odio at tempor tempor, ex eros iaculis quam, aliquet blandit felis lectus sit amet diam. Morbi vel sapien at mi rhoncus molestie. Sed nec laoreet tortor. Nunc id dui fringilla, laoreet velit quis, venenatis ipsum. Phasellus semper mauris in diam ultrices, vitae tincidunt nisi euismod. Pellentesque quis lacinia lectus. Morbi nec dolor a ipsum bibendum viverra in nec lacus. Proin maximus sem vel bibendum dapibus. Quisque fringilla at ex at aliquet. Sed est quam, porta ac elit et, consectetur vestibulum leo. Integer nec quam a metus eleifend tempus. Vestibulum non varius arcu. In posuere egestas lacus a hendrerit.
+
+Sed semper interdum lacus, non imperdiet ipsum faucibus nec. Cras a mollis purus. Morbi ut ornare neque. Praesent gravida velit nec lectus faucibus, nec vestibulum mi pharetra. Nulla molestie ultrices nisi, eget posuere velit feugiat vel. Duis fringilla felis libero, eget cursus felis consequat et. Donec sodales elit diam, ut faucibus lacus hendrerit et. Curabitur auctor finibus nisl, in rutrum purus imperdiet sit amet.
+
+Pellentesque molestie pretium neque, eget laoreet ex. Curabitur quis lectus id neque tincidunt ullamcorper nec vel odio. Pellentesque tempus metus quam, non pellentesque nibh tempus et. Ut leo massa, iaculis nec lectus et, porttitor molestie eros. Vivamus eleifend dignissim purus, a egestas nisi iaculis ut. Maecenas interdum eros in orci aliquet pulvinar at nec lorem. Mauris et quam vel urna iaculis vulputate et sit amet velit. Curabitur massa nibh, viverra ornare gravida in, sodales nec ex. Fusce fermentum elementum nisi, ac porta magna tincidunt quis. Sed congue nunc eget mauris consequat gravida. Suspendisse fermentum risus sit amet auctor dapibus. Ut quam ex, finibus non imperdiet sit amet, semper ac erat. Vivamus convallis eget sapien ac pulvinar. Pellentesque ut pharetra lorem.
+
+Proin eu ligula ut sem lacinia ullamcorper Table \ref{tab:my_table}. Vivamus ullamcorper massa arcu, sed tincidunt dui dictum et. Vivamus finibus libero in leo semper, at fermentum ligula porta. Aliquam molestie ligula eget volutpat iaculis. Nam porttitor elit tortor, eget euismod risus mollis et. Mauris sit amet iaculis odio, eu fringilla leo. Phasellus pharetra vitae velit et faucibus. Mauris orci tellus, dignissim et quam eget, tincidunt pretium libero. In eu vehicula orci, vitae dignissim neque. In suscipit, risus eget lobortis dapibus, orci libero hendrerit lectus, a vulputate dui sem quis est. Suspendisse id tortor consequat ligula vehicula porta.
+
+Aliquam pulvinar, augue id blandit scelerisque, orci nulla consequat purus, quis accumsan lectus leo eu tortor. Donec tempor dolor vel dui lobortis viverra. Nam at orci quam. Ut ut efficitur tellus, in rhoncus odio. Duis egestas tortor lectus, eget sollicitudin eros ornare ac. Suspendisse faucibus mollis convallis. Mauris id risus blandit, suscipit dolor nec, posuere quam. Nulla facilisi. Cras nec hendrerit arcu, a mattis nisl. Nam dictum libero non lectus suscipit, vitae feugiat enim rutrum. Curabitur et leo dolor. Morbi dolor tellus, cursus posuere hendrerit et, convallis id nunc. Phasellus ultrices ante nulla, id rhoncus turpis efficitur in.
+
+% print the footnotes as endnotes, if any exist
+\IfFileExists{\jobname.ent}{\theendnotes}{}
+
+% print the bibliography
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}
