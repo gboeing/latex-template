@@ -1,2 +1,3 @@
 # latex-template
-a simple latex template to rapidly start document creation
+
+A standard latex template to rapidly prototyping new documents
