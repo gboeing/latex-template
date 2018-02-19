@@ -20,7 +20,7 @@
 % begin preamble setup
 %-------------------------------------------------------------------------------------------
 \RequirePackage[l2tabu,orthodox]{nag}   % warn if using any obsolete or outdated commands
-\documentclass[11pt]{article}           % document style
+\documentclass[11pt,twocolumn]{article} % document style
 
 % import encoding and font packages for pdflatex, in order
 \usepackage[T1]{fontenc}                % output T1 font encoding (8-bit) so accented characters are a single glyph
@@ -34,14 +34,15 @@
 \usepackage{microtype}                  % improves text appearance with kerning, etc
 
 % import everything else
+\usepackage{abstract}                   % allow full-page title/abstract in twocolumn mode
 \usepackage{authblk}                    % footnote-style author/affiliation info
 \usepackage{booktabs}                   % better looking tables
+\usepackage{caption}                    % custom figure/table caption styles
 \usepackage[final]{draftwatermark}      % watermark paper as a draft
 \usepackage{endnotes}                   % enable endnotes
 \usepackage{geometry}                   % configure page dimensions and margins
 \usepackage{graphicx}                   % better inclusion of graphics
 \usepackage{hyperref}                   % hypertext in document
-\usepackage{multicol}                   % intermix single and multiple columns in document
 \usepackage{natbib}                     % author-year citations w/ bibtex, including textual and parenthetical
 \usepackage{rotating}                   % rotate wide tables or figures on a page to make them landscape
 \usepackage{setspace}                   % configure spacing between lines
@@ -67,6 +68,9 @@
 \titleformat{\section}{\normalfont\sffamily\large\bfseries\color{black}}{\thesection.}{0.3em}{}
 \titleformat{\subsection}{\normalfont\sffamily\small\bfseries\color{black}}{\thesubsection.}{0.3em}{}
 
+% make figure/table captions sans-serif small font
+\captionsetup{font={footnotesize,sf},labelfont=bf,labelsep=period}
+
 % configure pdf metadata and link handling, via hyperref package
 \hypersetup{
 	pdfauthor={\myname},
@@ -75,7 +79,8 @@
 	pdfkeywords={\paperkeywords},
 	pdffitwindow=true,         % window fit to page when opened
 	breaklinks=true,           % break links that overflow horizontally
-	hidelinks=true             % remove link color and border
+	colorlinks=false,          % remove link color
+	pdfborder={0 0 0}          % remove link border
 }
 
 % configure watermark appearance: to turn it on/off use [final] argument at package import
@@ -87,28 +92,25 @@
 % end preamble setup, begin document
 %-------------------------------------------------------------------------------------------
 \begin{document}
-
+	
 \title{\papertitle\footnote{This is a preprint of: \papercitation}}
 \date{\paperdate}
 \author[]{\myname \thanks{Email: \href{mailto:\myemail}{\myemail}}}
 \affil[]{\myaffiliation}
-
+	
+% make title and abstract full-page single-column
+\twocolumn[
 \maketitle
-	
-\begin{abstract}
-
+\begin{onecolabstract}
 Nunc efficitur dui non elementum tincidunt. Sed eget ultricies dui, nec congue massa. Fusce at faucibus arcu, a dapibus leo. Donec congue viverra lorem, et viverra massa pellentesque eu. Mauris dictum efficitur lectus, nec tempus velit viverra at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In tristique urna purus, a viverra sapien vehicula at. Donec id lectus dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut viverra leo ac velit aliquam, id pellentesque est maximus. Proin laoreet aliquet ex vel semper. Integer congue sollicitudin elit, ut tincidunt odio tincidunt quis. Duis eu mi sed massa pellentesque efficitur.
+\vspace{1cm}
+\end{onecolabstract}]
+\saythanks % typeset any footnotes arising in the above block
 
-\end{abstract}
 
-\vspace{0.5cm}
-
-% start two-column layout after the title and abstract
-\begin{multicols}{2}
-	
 \section{Introduction}
 
-Lorem ipsum\endnote{This is my note.} dolor sit amet, consectetur adipiscing elit. Mauris fermentum sapien at libero finibus, lacinia tincidunt mi varius. \enquote{Vestibulum eget pretium urna.} Phasellus consectetur sem eu egestas scelerisque. Etiam tempor porttitor nulla, et rhoncus dui. Praesent iaculis sollicitudin augue et luctus. Quisque congue odio a suscipit sodales. Nullam mattis, ligula at vulputate lacinia, est nisi faucibus felis, ac gravida orci ligula sit amet nulla. Sed commodo magna semper interdum facilisis. Proin porttitor tortor a purus convallis malesuada \citep{boeing_new_2017}. Ut tempus eleifend eros, lacinia lobortis urna rhoncus ut. Donec in sapien tincidunt, consectetur velit ut, posuere nibh. Cras finibus imperdiet sem nec placerat. Donec efficitur metus eu sapien semper elementum. Nullam eros dui, rhoncus lacinia libero ac, pretium pellentesque justo. In a laoreet mauris, ac sollicitudin erat. Phasellus mattis tincidunt diam id sagittis.
+Lorem ipsum\endnote{This is my note.} dolor sit amet, \emph{consectetur} adipiscing elit. Mauris fermentum sapien at libero finibus, lacinia tincidunt mi varius. \enquote{Vestibulum eget pretium urna.} Phasellus consectetur sem eu egestas scelerisque. Etiam tempor porttitor nulla, et rhoncus dui. Praesent iaculis sollicitudin augue et luctus. Quisque congue odio a suscipit sodales. Nullam mattis, ligula at vulputate lacinia, est nisi faucibus felis, ac gravida orci ligula sit amet nulla. Sed commodo magna semper interdum facilisis. Proin porttitor tortor a purus convallis malesuada \citep{boeing_new_2017}. Ut tempus eleifend eros, lacinia lobortis urna rhoncus ut. Donec in sapien tincidunt, consectetur velit ut, posuere nibh. Cras finibus imperdiet sem nec placerat. Donec efficitur metus eu sapien semper elementum. Nullam eros dui, rhoncus lacinia libero ac, pretium pellentesque justo. In a laoreet mauris, ac sollicitudin erat. Phasellus mattis tincidunt diam id sagittis.
 
 Nullam consequat ex lectus. Aliquam sagittis lacus quis dui tincidunt, eget accumsan dolor dictum. Duis vel ultricies sem. Aliquam dapibus tellus consequat, ornare diam vitae, dapibus dui. Maecenas blandit posuere augue quis ornare. Fusce posuere tortor fringilla lacus viverra, a iaculis quam vehicula. Aenean convallis tellus ut leo egestas, ac consequat nisi efficitur.
 
@@ -184,5 +186,4 @@ The author wishes to thank the following people for their comments and support.
 \bibliographystyle{apalike}
 \bibliography{references}
 
-\end{multicols}
 \end{document}
