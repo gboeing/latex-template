@@ -10,14 +10,6 @@
 % - avoid importing other packages unless truly necessary (it rarely is)
 % - compile often, check log for any warnings/errors, and resolve them promptly when they arise
 
-\newcommand{\myname}{Geoff Boeing}
-\newcommand{\myemail}{boeing@usc.edu}
-\newcommand{\myaffiliation}{Department of Urban Planning and Spatial Analysis\\Sol Price School of Public Policy\\University of Southern California}
-\newcommand{\paperdate}{April 2024}
-\newcommand{\papertitle}{This Is My Paper Title}
-\newcommand{\papercitation}{Boeing, G. 2024.\ \papertitle. Under review at \emph{Journal Name}.}
-\newcommand{\paperkeywords}{Urban Planning, Transportation, Data Science}
-
 \RequirePackage[l2tabu,orthodox]{nag} % warn if using any obsolete or outdated commands
 \documentclass[12pt,letterpaper]{article} % document style
 
@@ -52,6 +44,14 @@
 % print only the month and year when using \today
 \newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
 
+\newcommand{\myname}{Geoff Boeing}
+\newcommand{\myemail}{boeing@usc.edu}
+\newcommand{\myaffiliation}{Department of Urban Planning and Spatial Analysis\\Sol Price School of Public Policy\\University of Southern California}
+\newcommand{\paperdate}{April 2024}
+\newcommand{\papertitle}{This Is My Paper Title}
+\newcommand{\papercitation}{Boeing, G. 2024. \papertitle. Under review at \textit{Journal Name}.}
+\newcommand{\paperkeywords}{Urban Planning, Transportation, Data Science}
+
 % location of figure files, via graphicx package
 \graphicspath{{./figures/}}
 
@@ -69,6 +69,7 @@
 % set section/subsection headings as the sans serif font, via titlesec package
 \titleformat{\section}{\normalfont\sffamily\large\bfseries\color{black}}{\thesection.}{0.3em}{}
 \titleformat{\subsection}{\normalfont\sffamily\small\bfseries\color{black}}{\thesubsection.}{0.3em}{}
+\titleformat{\subsubsection}{\normalfont\sffamily\small\color{black}}{\thesubsubsection.}{0.3em}{}
 
 % make figure/table captions sans-serif small font
 \captionsetup{font={footnotesize,sf},labelfont=bf,labelsep=period}
@@ -88,7 +89,7 @@
 \begin{document}
 
 \title{\papertitle\footnote{{Preprint of: \papercitation}}}
-\author[]{\myname\footnote{Email: \href{mailto:\myemail}{\myemail}}}
+\author[]{\myname\footnote{Correspondence: \href{mailto:\myemail}{\myemail}}}
 \affil[]{\myaffiliation}
 \date{\paperdate}
 
@@ -102,7 +103,7 @@ Nunc efficitur dui non elementum tincidunt. Sed eget ultricies dui, nec congue m
 
 \section{Introduction}
 
-Lorem ipsum\endnote{This is my note.} dolor sit amet, \emph{consectetur} adipiscing elit. Mauris fermentum sapien at libero finibus, lacinia tincidunt mi varius.\ \enquote{Vestibulum eget pretium urna.} Phasellus consectetur sem eu egestas scelerisque. Etiam tempor porttitor nulla, et rhoncus dui. Praesent iaculis sollicitudin augue et luctus. Quisque congue odio a suscipit sodales. Nullam mattis, ligula at vulputate lacinia, est nisi faucibus felis, ac gravida orci ligula sit amet nulla. Sed commodo magna semper interdum facilisis. Proin porttitor tortor a purus convallis malesuada \citep{boeing_off_2021}. Ut tempus eleifend eros, lacinia lobortis urna rhoncus ut. Donec in sapien tincidunt, consectetur velit ut, posuere nibh. Cras finibus imperdiet sem nec placerat. Donec efficitur metus eu sapien semper elementum. Nullam eros dui, rhoncus lacinia libero ac, pretium pellentesque justo. In a laoreet mauris, ac sollicitudin erat. Phasellus mattis tincidunt diam id sagittis.
+Lorem ipsum\endnote{This is my note.} dolor sit amet, \textit{consectetur} adipiscing elit. Mauris fermentum sapien at libero finibus, lacinia tincidunt mi varius. Vestibulum \enquote{eget pretium} urna. Phasellus consectetur sem eu egestas scelerisque. Etiam tempor porttitor nulla, et rhoncus dui. Praesent iaculis sollicitudin augue et luctus. Quisque congue odio a suscipit sodales. Nullam mattis, ligula at vulputate lacinia, est nisi faucibus felis, ac gravida orci ligula sit amet nulla. Sed commodo magna semper interdum facilisis. Proin porttitor tortor a purus convallis malesuada \citep{boeing_off_2021}. Ut tempus eleifend eros, lacinia lobortis urna rhoncus ut. Donec in sapien tincidunt, consectetur velit ut, posuere nibh. Cras finibus imperdiet sem nec placerat. Donec efficitur metus eu sapien semper elementum. Nullam eros dui, rhoncus lacinia libero ac, pretium pellentesque justo. In a laoreet mauris, ac sollicitudin erat. Phasellus mattis tincidunt diam id sagittis.
 
 Nullam consequat ex lectus. Aliquam sagittis lacus quis dui tincidunt, eget accumsan dolor dictum. Duis vel ultricies sem. Aliquam dapibus tellus consequat, ornare diam vitae, dapibus dui. Maecenas blandit posuere augue quis ornare. Fusce posuere tortor fringilla lacus viverra, a iaculis quam vehicula. Aenean convallis tellus ut leo egestas, ac consequat nisi efficitur.
 
