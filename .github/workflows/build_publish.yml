@@ -38,5 +38,6 @@ jobs:
 
       - name: Build LaTeX PDF
         uses: xu-cheng/latex-action@v3
+        working-directory: ./latex/
         with:
-          root_file: ./latex/main.tex
+          root_file: main.tex
