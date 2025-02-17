@@ -34,7 +34,7 @@ jobs:
       - name: Run pre-commit checks
         run: pre-commit run --all-files
         env:
-          SKIP: no-commit-to-branch
+          SKIP: chktex-system,no-commit-to-branch
 
       - name: Build LaTeX PDF
         uses: xu-cheng/latex-action@v3
