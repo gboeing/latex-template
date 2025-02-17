@@ -15,6 +15,7 @@ repos:
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: mixed-line-ending
+      - id: no-commit-to-branch
       - id: trailing-whitespace
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks
@@ -37,4 +38,4 @@ repos:
     rev: v0.2.2
     hooks:
       - id: chktex-conda
-        args: [-eall, -n8, -n10, -n17, -n22, -n30, -n36, -n46]
+        args: [-H, -I]
