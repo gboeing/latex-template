@@ -38,6 +38,7 @@ jobs:
 
       - name: Build LaTeX PDF
         uses: xu-cheng/latex-action@v3
-        working-directory: ./latex/
         with:
+          pre_compile: tlmgr install chktex && chktex main.tex
           root_file: main.tex
+          working_directory: ./latex/
