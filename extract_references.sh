@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 bibexport -o ./latex/references.bib ./latex/main.aux
 echo "delete.field = { abstract }" > ./latex/remove_abs.rsc
 bibtool -r ./latex/remove_abs.rsc ./latex/references.bib -o ./latex/references.bib
