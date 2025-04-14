@@ -1,3 +1,3 @@
-# latex-template
+# LaTeX Template
 
-A standard latex template to rapidly prototyping new documents
+A standard latex template to rapidly prototype new documents
