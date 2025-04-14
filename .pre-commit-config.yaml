@@ -24,7 +24,7 @@ repos:
       - id: remove-tabs
 
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.35.1
+    rev: v1.37.0
     hooks:
       - id: yamllint
         args:
