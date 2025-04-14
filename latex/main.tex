@@ -6,7 +6,10 @@
 % Some considerations:
 % - use pdflatex instead of xelatex/lualatex for compatibility with arxiv and publishers
 % - use natbib/bibtex instead of biblatex/biber for compatibility with arxiv and publishers
-% - avoid system fonts, instead use self-contained ebgaramond/tgheros font packages
+% - use \enquote{} for quote marks and \textit{} for italics
+% - use \citet[][]{} and \citep[][]{} for citations
+% - use -- for en-dash and --- for em-dash
+% - avoid system fonts, instead use texlive-provided ebgaramond/tgheros font packages
 % - avoid importing other packages unless truly necessary (it rarely is)
 % - compile often, check log for any warnings/errors, and resolve them promptly when they arise
 
@@ -53,7 +56,7 @@
 \newcommand{\paperkeywords}{Urban Planning, Transportation, Data Science}
 
 % location of figure files, via graphicx package
-\graphicspath{{./figures/}}
+\graphicspath{{.}}
 
 % configure the page layout, via geometry package
 \geometry{
@@ -96,61 +99,64 @@
 \maketitle
 
 \begin{abstract}
-Nunc efficitur dui non elementum tincidunt. Sed eget ultricies dui, nec congue massa. Fusce at faucibus arcu, a dapibus leo. Donec congue viverra lorem, et viverra massa pellentesque eu. Mauris dictum efficitur lectus, nec tempus velit viverra at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In tristique urna purus, a viverra sapien vehicula at. Donec id lectus dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut viverra leo ac velit aliquam, id pellentesque est maximus. Proin laoreet aliquet ex vel semper. Integer congue sollicitudin elit, ut tincidunt odio tincidunt quis. Duis eu mi sed massa pellentesque efficitur.
+An abstract (when required) is written last and summarizes everything into a succinct paragraph. Consider using a simple five-sentence structure. What is the research context and problem? What is your research question? How did you answer that question? What did you find? Significance: how are these findings important and useful?
+
 \vspace{1cm}
 \end{abstract}
 
 
 \section{Introduction}
 
-Lorem ipsum\endnote{This is my note.} dolor sit amet, \textit{consectetur} adipiscing elit. Mauris fermentum sapien at libero finibus, lacinia tincidunt mi varius. Vestibulum \enquote{eget pretium} urna. Phasellus consectetur sem eu egestas scelerisque. Etiam tempor porttitor nulla, et rhoncus dui. Praesent iaculis sollicitudin augue et luctus. Quisque congue odio a suscipit sodales. Nullam mattis, ligula at vulputate lacinia, est nisi faucibus felis, ac gravida orci ligula sit amet nulla. Sed commodo magna semper interdum facilisis. Proin porttitor tortor a purus convallis malesuada \citep{boeing_off_2021}. Ut tempus eleifend eros, lacinia lobortis urna rhoncus ut. Donec in sapien tincidunt, consectetur velit ut, posuere nibh. Cras finibus imperdiet sem nec placerat. Donec efficitur metus eu sapien semper elementum. Nullam eros dui, rhoncus lacinia libero ac, pretium pellentesque justo. In a laoreet mauris, ac sollicitudin erat. Phasellus mattis tincidunt diam id sagittis.
+Your audience \textit{doesn't care} about your work and you have three paragraphs to change their mind. Paragraph 1: introduce your topic and its overall context and importance (persuade us to care). Lay out the topic's context and background using anecdotes or facts to illustrate its importance. Show, don't tell. Orient the reader toward your paper's subject, motivate why this should interest us in the first place, and establish your perspective on approaching it.
 
-Nullam consequat ex lectus. Aliquam sagittis lacus quis dui tincidunt, eget accumsan dolor dictum. Duis vel ultricies sem. Aliquam dapibus tellus consequat, ornare diam vitae, dapibus dui. Maecenas blandit posuere augue quis ornare. Fusce posuere tortor fringilla lacus viverra, a iaculis quam vehicula. Aenean convallis tellus ut leo egestas, ac consequat nisi efficitur.
+Paragraph 2: introduce your research question and argument. What is the problem and its significance? What is the open research question that follows from it and what argument do you develop over the course of this paper? Why is it important from a real-world planning or policy perspective?
+
+Paragraph 3: summarize your methods, findings, and significance. How did you answer your question and what did you find? Summarize your data and methods in 1--2 sentences. Then summarize your findings specifically and precisely in 1--2 sentences, citing specific takeaways like \enquote{a 1\% increase in fuel prices decreases VMT by 0.2\%.} Conclude with 1 sentence on \enquote{who cares?} That is, how do these findings impact real-world policy? What should a practitioner do differently after reading this study? Why is the world better off for having discovered what you have discovered?
+
+Paragraph 4: optional roadmap to signpost the organization of the remaining sections so the reader knows what's coming and how you've laid things out.
 
 \section{Background}
 
-Nunc porttitor pretium eleifend \citep{boarnet_travel_2001}. In hendrerit dolor leo, at rutrum erat finibus ac. Aliquam id nisi ipsum. In tristique, neque nec condimentum consectetur, neque nisi imperdiet nibh, at pellentesque urna quam non leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut sed consequat nunc, sit amet iaculis augue. Mauris in blandit erat, non dapibus nulla. Duis condimentum pretium felis, vel commodo justo luctus non. Integer consectetur, ipsum consectetur tristique pharetra, ligula purus ultricies diam, et lacinia odio sapien et arcu. Morbi vel semper urna, in consectetur massa. Mauris rutrum sem nec tortor tincidunt porta. Mauris maximus vehicula nisi, id cursus leo laoreet ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas a lacus vel nisl volutpat vehicula.
+Background: what is currently known/unknown to subsequently establish your research problem, question, methods, and importance. Explain the context of your study. Review relevant previous work to establish what is currently known and what is the state of the art. Research problem: identify what important open question remains (gap in the literature or unmet need in practice). This section is more than an annotated bibliography: you're building an argument to motivate your study's research problem, question, methods, and overall importance.
+
+You can use parenthetical citations \citep{boeing_off_2021} or textual citations, such as to \citet{boarnet_travel_2001}. You can also usually use end notes\endnote{This is an example end note.} as needed but ideally rarely.
 
 \section{Methods}
 
-In hendrerit dolor leo, at rutrum erat finibus ac. Aliquam id nisi ipsum. In tristique, neque nec condimentum consectetur, neque nisi imperdiet nibh, at pellentesque urna quam non leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut sed consequat nunc, sit amet iaculis augue. Mauris in blandit erat, non dapibus nulla. Duis condimentum pretium felis, vel commodo justo luctus non. Integer consectetur, ipsum consectetur tristique pharetra, ligula purus ultricies diam, et lacinia odio sapien et arcu. Morbi vel semper urna, in consectetur massa. Mauris rutrum sem nec tortor tincidunt porta. Mauris maximus vehicula nisi, id cursus leo laoreet ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas a lacus vel nisl volutpat vehicula.
+Methods section: what did you do and how did you do it? In the first paragraph state your research question and hypotheses, which derive directly from the research problem that concluded your background section.
 
 \subsection{Data}
 
-Nunc efficitur dui non elementum tincidunt. Sed eget ultricies dui, nec congue massa. Fusce at faucibus arcu, a dapibus leo. Donec congue viverra lorem, et viverra massa pellentesque eu. Mauris dictum efficitur lectus, nec tempus velit viverra at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In tristique urna purus, a viverra sapien vehicula at. Donec id lectus dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut viverra leo ac velit aliquam, id pellentesque est maximus. Proin laoreet aliquet ex vel semper.
-
-\begin{equation}
-    \label{eq:my_equation}
-    D_t = \frac{R_t + I_t - O_t}{A_t}
-\end{equation}
-
-Integer congue sollicitudin elit, ut tincidunt odio tincidunt quis. Duis eu mi sed massa pellentesque efficitur. Suspendisse fringilla dolor sed erat finibus consequat. Integer in metus vel odio hendrerit efficitur. Nulla sed orci nec mi commodo ultricies mattis non tortor.
+Data subsection: describe your data collection, variables, and any relevant processing.
 
 \subsection{Analysis}
 
-Quisque faucibus varius elit eu accumsan. Vivamus sit amet arcu at nibh auctor vulputate. Suspendisse dolor est, lacinia quis justo sodales, varius rhoncus nisi. Nulla maximus urna pulvinar dui pellentesque ultrices. Sed tincidunt consectetur massa, tincidunt sollicitudin odio eleifend in. Cras ornare ante non semper efficitur. Morbi vel maximus nisi, ac luctus sapien. Etiam augue nisi, aliquam vel quam quis, dignissim dignissim orci. Phasellus ultricies purus in ante scelerisque pulvinar. Morbi faucibus fringilla congue. Aenean accumsan est sit amet dolor maximus, vel posuere quam semper. Sed vehicula cursus gravida. Pellentesque auctor in elit ut laoreet. Proin iaculis condimentum turpis. Aenean egestas semper laoreet. Ut ornare dui quis lacus feugiat, eget posuere odio rutrum.
+Analysis subsection: describe your analyses with enough detail that an expert could replicate them. You can provide equations for precision, such as Equation~\ref{eq:pop_density}.
 
-\section{Findings}
+\begin{equation}
+    \label{eq:pop_density}
+    D_t = \frac{R_t + I_t - O_t}{A_t}
+\end{equation}
 
-Integer urna mauris, varius at vestibulum id, elementum id purus. Vestibulum tincidunt, odio at tempor tempor, ex eros iaculis quam, aliquet blandit felis lectus sit amet diam. Morbi vel sapien at mi rhoncus molestie. Sed nec laoreet tortor. Nunc id dui fringilla, laoreet velit quis, venenatis ipsum. Phasellus semper mauris in diam ultrices, vitae tincidunt nisi euismod. Pellentesque quis lacinia lectus. Morbi nec dolor a ipsum bibendum viverra in nec lacus. Proin maximus sem vel bibendum dapibus. Quisque fringilla at ex at aliquet. Sed est quam, porta ac elit et, consectetur vestibulum leo. Integer nec quam a metus eleifend tempus. Vestibulum non varius arcu.
+\section{Results}
+
+Findings: what did your analysis reveal? Organize your results around your argument but present them objectively with limited interpretation. Include supporting tables/figures. Do not mix in any methods here.
 
 \subsection{Finding One}
 
- In posuere egestas lacus a hendrerit. Sed semper interdum lacus, non imperdiet ipsum faucibus nec Figure~\ref{fig:my_figure}. Cras a mollis purus. Morbi ut ornare neque. Praesent gravida velit nec lectus faucibus, nec vestibulum mi pharetra. Nulla molestie ultrices nisi, eget posuere velit feugiat vel. Duis fringilla felis libero, eget cursus felis consequat et. Donec sodales elit diam, ut faucibus lacus hendrerit et. Curabitur auctor finibus nisl, in rutrum purus imperdiet sit amet.
+Present the details of your first finding here. Add figures and tables as needed. For example, see Figure~\ref{fig:world_map}.
 
-\begin{figure*}[tbp]
+\begin{figure*}[tbhp]
     \centering
-    \includegraphics[width=0.95\textwidth]{example.png}
-    \caption{This is the caption of my figure.}\label{fig:my_figure}
+    \includegraphics[width=0.95\textwidth]{fig_example.png}
+    \caption{This is the caption of my figure.}\label{fig:world_map}
 \end{figure*}
-
-Pellentesque molestie pretium neque, eget laoreet ex. Curabitur quis lectus id neque tincidunt ullamcorper nec vel odio. Pellentesque tempus metus quam, non pellentesque nibh tempus et. Ut leo massa, iaculis nec lectus et, porttitor molestie eros. Vivamus eleifend dignissim purus, a egestas nisi iaculis ut. Maecenas interdum eros in orci aliquet pulvinar at nec lorem. Mauris et quam vel urna iaculis vulputate et sit amet velit. Curabitur massa nibh, viverra ornare gravida in, sodales nec ex. Fusce fermentum elementum nisi, ac porta magna tincidunt quis. Sed congue nunc eget mauris consequat gravida. Suspendisse fermentum risus sit amet auctor dapibus. Ut quam ex, finibus non imperdiet sit amet, semper ac erat. Vivamus convallis eget sapien ac pulvinar. Pellentesque ut pharetra lorem.
 
 \subsection{Finding Two}
 
-Proin eu ligula ut sem lacinia ullamcorper Table~\ref{tab:my_table}. Vivamus ullamcorper massa arcu, sed tincidunt dui dictum et. Vivamus finibus libero in leo semper, at fermentum ligula porta. Aliquam molestie ligula eget volutpat iaculis. Nam porttitor elit tortor, eget euismod risus mollis et. Mauris sit amet iaculis odio, eu fringilla leo. Phasellus pharetra vitae velit et faucibus. Mauris orci tellus, dignissim et quam eget, tincidunt pretium libero. In eu vehicula orci, vitae dignissim neque. In suscipit, risus eget lobortis dapibus, orci libero hendrerit lectus, a vulputate dui sem quis est. Suspendisse id tortor consequat ligula vehicula porta.
+Present the details of your second finding here. Add figures and tables as needed. For example, see Table~\ref{tab:my_table}.
 
-\begin{table*}[tbp]
+\begin{table*}[tbhp]
     \centering
     \caption{This is the caption of my table.}\label{tab:my_table}
     \begin{tabular}{rrrr}
@@ -162,18 +168,21 @@ Proin eu ligula ut sem lacinia ullamcorper Table~\ref{tab:my_table}. Vivamus ull
         2734  &  8006 & 0.092 &  86882 \\
         1500  &  4850 & 0.057 &  85743 \\
         4307  & 19051 & 0.240 &  79424 \\
-        4233  & 22416 & 0.346 &  64768 \\
-        3499  & 13051 & 0.214 &  60971 \\
-        11502 & 92865 & 1.670 &  55617 \\
-        3821  &  3319 & 0.061 &  54162 \\
-        3073  &  4829 & 0.093 &  52122 \\
         \bottomrule
     \end{tabular}
 \end{table*}
 
+\section{Discussion}
+
+Discussion: answer your question, advance your argument, and demonstrate significance. Return to research question and interpret (don't repeat) your findings as evidence for/against it. Tell a story: link your findings together to persuasively advance your argument. Significance: discuss specific implications for research and practice (\enquote{so what}). Acknowledge study's limitations and alternative interpretations of your evidence: what opportunities are there for future research?
+
+In general, people struggle most with writing an effective introduction and discussion. Perversely, these are also the most critical sections of your paper for persuading your readers (including peer reviewers).
+
 \section{Conclusion}
 
-Aliquam pulvinar, augue id blandit scelerisque, orci nulla consequat purus, quis accumsan lectus leo eu tortor. Donec tempor dolor vel dui lobortis viverra. Nam at orci quam. Ut ut efficitur tellus, in rhoncus odio. Duis egestas tortor lectus, eget sollicitudin eros ornare ac. Suspendisse faucibus mollis convallis. Mauris id risus blandit, suscipit dolor nec, posuere quam. Nulla facilisi. Cras nec hendrerit arcu, a mattis nisl. Nam dictum libero non lectus suscipit, vitae feugiat enim rutrum. Curabitur et leo dolor. Morbi dolor tellus, cursus posuere hendrerit et, convallis id nunc. Phasellus ultrices ante nulla, id rhoncus turpis efficitur in.
+Conclusion: succinctly wrap-up in one or two paragraphs. Summarize your topic, question, and argument. Summarize what you did, what you found, what it means, and why it matters.
+
+Sometimes the introduction and background are merged into a single section. Sometimes the discussion and conclusion are merged into a single section. But this is the basic structure of an effective paper, be it a technical report or a scholarly article. The structure represents a loose symmetry. The introduction and conclusion roughly mirror each other by explaining the topic's importance, the research question, how you answered it and what you found, and its meaning/significance in the real world. The background and discussion roughly mirror each other by explaining what is known about the topic before (to motivate your specific study) and after your study (to advance our knowledge and impact the real world). The methods and findings sections roughly mirror each other by laying out what you did and then presenting what you found when you did so.
 
 \section*{Acknowledgments}
 
