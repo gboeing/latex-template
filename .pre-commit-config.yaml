@@ -38,4 +38,4 @@ repos:
     rev: v0.2.2
     hooks:
       - id: chktex-conda
-        args: [-H, -I]
+        args: [-n22, -n30, -n46]
