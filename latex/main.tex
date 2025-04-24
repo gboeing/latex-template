@@ -4,26 +4,26 @@
 % Web: https://geoffboeing.com/
 % Repo: https://github.com/gboeing/latex-template
 % Some guidelines:
-% - use pdflatex instead of xelatex/lualatex for compatibility with arxiv and publishers
-% - use natbib/bibtex instead of biblatex/biber for compatibility with arxiv and publishers
+% - use pdflatex instead of xelatex/lualatex for compatibility with arxiv/publishers
+% - use natbib/bibtex instead of biblatex/biber for compatibility with arxiv/publishers
 % - use \enquote{} for quote marks and \textit{} for italics; avoid boldface
 % - use \citet{} and \citep{} for textual and parenthetical citations, respectively
 % - use en dash (--) for ranges of values
 % - use em dash (---) to offset adjunctive phrases stronger than those in parentheses
-% - ensure table columns' values align on the decimal
+% - ensure table columns' values right-align on the decimal
 % - avoid system fonts, instead use texlive-provided font packages
 % - avoid importing other packages unless truly necessary (it rarely is)
 % - compile often, check log for warnings/errors, and resolve them promptly
 % - run the pre-commit hooks to lint via chktex, and resolve any warnings
 
-\RequirePackage[l2tabu,orthodox]{nag} % warn if using any obsolete or outdated commands
+\RequirePackage[l2tabu,orthodox]{nag} % warn if using any obsolete commands
 \documentclass[12pt,letterpaper]{article} % document style
 
 % load encoding and font packages for pdflatex, in order
-\usepackage[T1]{fontenc}    % output 8-bit encoded fonts
+\usepackage[T1]{fontenc} % output 8-bit encoded fonts
 \usepackage[utf8]{inputenc} % allow input of utf-8 encoded characters
-\usepackage{ebgaramond}     % document's serif font
-\usepackage{tgheros}        % document's sans serif font
+\usepackage{ebgaramond} % document's serif font
+\usepackage{tgheros} % document's sans serif font
 
 % load babel, csquotes, and microtype in order
 \usepackage[USenglish]{babel} % auto-regionalize hyphens, quote marks, etc
@@ -31,7 +31,7 @@
 \usepackage[babel=true]{microtype} % enable micro-typographic adjustments
 
 % import everything else
-\usepackage{abstract} % allow full-page title/abstract in twocolumn mode
+\usepackage{amsmath} % additional mathematical typesetting features
 \usepackage{authblk} % footnote-style author/affiliation info
 \usepackage{booktabs} % better looking tables
 \usepackage{caption} % custom figure/table caption styles
@@ -40,8 +40,8 @@
 \usepackage{endnotes} % enable endnotes
 \usepackage{geometry} % configure page dimensions and margins
 \usepackage{graphicx} % better inclusion of graphics
-\usepackage{natbib} % author-year citations w/ bibtex, including textual and parenthetical
-\usepackage{rotating} % rotate wide tables or figures on a page to make them landscape
+\usepackage{natbib} % textual/parenthetical author-year citations w/bibtex
+\usepackage{rotating} % rotate wide tables/figures to make them landscape
 \usepackage{setspace} % configure spacing between lines
 \usepackage{titlesec} % custom section and subsection heading
 \usepackage{url} % make nice line-breakble urls
