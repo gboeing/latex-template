@@ -7,14 +7,16 @@ LaTeX is the secret to better scientific writing. It comes with a learning curve
 
 ## LaTeX guidelines
 
-This template loads a standard set of packages to get you up and running. A few rules:
+This template loads a standard set of packages to get you up and running.
+
+A few rules:
 
  - use pdflatex instead of xelatex/lualatex for compatibility with arxiv/publishers
  - use natbib/bibtex instead of biblatex/biber for compatibility with arxiv/publishers
- - use \enquote{} for quote marks and \textit{} for italics; avoid boldface
- - use \citet{} and \citep{} for textual and parenthetical citations, respectively
- - use en dash (--) for ranges of values
- - use em dash (---) to offset adjunctive phrases stronger than those in parentheses
+ - use `\enquote{}` for quote marks and `\textit{}` for italics; avoid boldface
+ - use `\citet{}` and `\citep{}` for textual and parenthetical citations, respectively
+ - use en dash (`--`) for ranges of values
+ - use em dash (`---`) to offset adjunctive phrases stronger than those in parentheses
  - ensure table columns' values right-align on the decimal
  - avoid system fonts, instead use texlive-provided font packages
  - avoid importing other packages unless truly necessary (it rarely is)
