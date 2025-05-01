@@ -1,29 +1,35 @@
----
-name: Lint and build
+name: CI
 
 on:  # yamllint disable-line rule:truthy
-  pull_request:
-    branches: [main]
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+
+    defaults:
+      run:
+        shell: bash -elo pipefail {0}
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Create environment with Micromamba
+        uses: mamba-org/setup-micromamba@v2
         with:
-          python-version: 3.*
-          cache: pip
-          cache-dependency-path: ./.github/workflows/build_publish.yml
-
-      - name: Install pre-commit
-        run: python -m pip install pre-commit
+          cache-environment: true
+          environment-file: ./environment.yml
+          post-cleanup: none
 
       - name: Cache pre-commit
         uses: actions/cache@v4
@@ -40,4 +46,4 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          working_directory: ./latex/
+          working_directory: ./paper/latex/
