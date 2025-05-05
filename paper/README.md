@@ -13,6 +13,7 @@ A few rules:
 
  - use pdflatex instead of xelatex/lualatex for compatibility with arxiv/publishers
  - use natbib/bibtex instead of biblatex/biber for compatibility with arxiv/publishers
+ - avoid subfolders: keep any figures or other files as siblings of the .tex file
  - use `\enquote{}` for quote marks and `\textit{}` for italics; avoid boldface
  - use `\citet{}` and `\citep{}` for textual and parenthetical citations, respectively
  - use en dash (`--`) for ranges of values
@@ -102,7 +103,7 @@ Be assertive and precise to make it clear what you mean. Prefer specific words t
 
 ### Use active language
 
-Use the active voice: tell us who is kicking whom. Avoid the passive voice unless the subject is unknown/unimportant. Example: "this pattern is illustrated by figure 2." Better: "figure 2 illustrates this pattern." Prefer strong verbs to weak ones. Limit your use of to be, to do, to have, to make, to provide, to get, to seem, etc.
+Write in the present tense and (plural first-person) active voice: tell us who is kicking whom. Avoid the passive voice unless the subject is truly unknown/unimportant. Example: "this pattern is illustrated by figure 2." Better: "figure 2 illustrates this pattern." Prefer strong verbs to weak ones. Limit your use of to be, to do, to have, to make, to provide, to get, to seem, etc.
 
 ### Use fewer prepositions
 
